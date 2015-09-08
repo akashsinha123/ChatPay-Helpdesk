@@ -1,0 +1,23 @@
+<div class="usr-search-block">
+<div class="usr-search-content">
+	<div class="empty-search-field"></div>
+	<div class="search-field">
+		<div class="search-icon"></div>
+		<input type="text" class="search-input" placeholder="Search for Users" ng-model="SearchedUser">
+	</div>
+	<div class="scrollable-content">
+		<div ng-class="{'search-suggestions': selected != $index, 'search-suggestions-two': selected == $index}" ng-repeat="customer in customers | filter:SearchedUser" ng-click="customerSelected(customer, $index)">
+			<div class="username-chat-wrap">
+				<div class="search-time">
+					<div class="search-instance">{{customer.lastMessageTime}}</div>
+					<div class="no-of-chats">{{customer.numberOfMessagesPending}}</div>
+				</div>
+				<div class="username-address">
+					<div class="username">{{customer.name}}</div>
+					<div class="user-address">{{customer.mobile}}</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>

@@ -1,0 +1,36 @@
+<div class="main-container">
+	<div class="content-section">
+		<div class="wrapper">
+			<div class="header">
+				<div class="logo" ng-click="home()"></div>
+				<div class="user-info" ng-mouseenter="adminInfo()" ng-mouseleave="adminInfo()">
+					<div class="design"></div>
+					<div class="user-msg">Hi Admin</div>
+					<div class="arrow-down"></div>
+					<div>
+						<ul ng-show="showInfo">
+							<li ng-click="managementPage()">Management</li>
+						    <li ng-click="logOut()">Log Out</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="main-usr-block">
+				<user-search template-messages="templateMessages" inventory="inventory" merchant-key="merchantKey" user-message-info="userMessageInfo" customer="customer" customers="customers" messages="messages" categories="categories" merchants="merchants" time-past="timePast"></user-search>
+				<div class="usr-order-block">
+					<user-info customer="customer"></user-info>
+					<div class="user-chat-order-block">
+						<user-chat merchant-key="merchantKey" customers="customers" user-message-info="userMessageInfo" customer="customer" messages="messages" merchants="merchants" merchant="merchant" time-past="timePast" fire-submit-message="fireSubmitMessage" composed-messagefrom-template="composedMessagefromTemplate">
+						</user-chat>
+						<div class="user-order-block">
+							<user-order inventory="inventory" merchant-key="merchantKey" customer="customer" messages="messages" categories="categories" merchants="merchants" merchant="merchant" search="search"></user-order>
+							<user-history customer="customer" search="search"></user-history>
+							<user-message template-messages="templateMessages" customer="customer" fire-submit-message="fireSubmitMessage" composed-messagefrom-template="composedMessagefromTemplate"></user-message>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer-section"></div>
+</div>

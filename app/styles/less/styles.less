@@ -1,0 +1,603 @@
+@import "variables.less";
+@import "mixins.less";
+@import "fonts.less";
+
+
+body{
+	width:100%;
+	height:100%;
+	background-color: @bodybg;
+	margin:0px;
+	font-family: 'Roboto', sans-serif;
+}
+.wrapper{
+	width:90%;
+	max-width:1280px;
+	margin:0 auto;
+}
+.main-container{
+	.content-section{
+		margin-bottom: 20px;
+		.wrapper{
+			.header{
+				overflow: hidden;
+				padding: 30px 0px;
+				margin-bottom: 30px;
+				.logo{
+					float:left;
+					background: url('../images/logo.png')no-repeat;
+					width: 189px;
+					height:40px;
+				}
+				.user-info{
+					float:right;
+					.design{
+						background-color: @design;
+						border-radius:25px;
+						width: 34px;
+						height:34px;
+						padding: 5px;
+						.inlinestyle(@middle);
+
+					}
+					.user-msg{
+						.font(18px,'Roboto',@user-msg,500);
+						padding: 5px;
+						.inlinestyle(@middle);
+					}
+					.arrow-down{
+						margin: 5px;
+						border-right:2px solid @arrow-down;
+					    border-bottom:2px solid @arrow-down;
+					    width:15px;
+					    height:15px;
+					    margin-bottom: 5px;
+					    transform: rotate(45deg);
+					    .inlinestyle(@middle);
+					}
+				}
+			}//header
+			.main-usr-block{
+				overflow: hidden;
+				.usr-search-block{
+					float: left;
+					width:24%;
+					.usr-search-content{
+						border-radius: 5px;
+						background-color: @white;
+						border:1px solid @screenborder;
+						width:100%;
+						
+						
+						.empty-search-field{
+							width: 293px;
+							height: 54px;
+						}
+						.search-field{
+							.search-input{
+								.font(16px,'Roboto',@search-input,400);
+								text-align: left;
+								background: url('../images/search-icon.png')no-repeat;
+								height: 44px;
+								width: 100%;
+								border:none;
+								text-indent: 50px;
+								background-position:20px 15px;
+								background-color: @search-field;
+								outline:none;
+
+							}
+						}
+						.scrollable-content{
+							overflow-y:auto;
+							height:624px;
+							.search-suggestions{
+								border-bottom:1px solid @user-search;
+								.username-chat-wrap{
+									overflow:hidden;
+									.username-address{
+										float:left;
+										padding: 10px;
+										.username{
+											.font(14px,'Roboto',@black,300);
+										}
+										.user-address{
+
+											.font(14px,'Roboto',@search-input,300);
+										}
+									}
+									.search-time{
+										float: right;
+										padding:10px;
+										.font(12px,'Roboto',@search-input,100);
+										.search-instance{
+											.inlinestyle(@middle);
+											padding: 5px;
+										}
+										.no-of-chats{
+											.inlinestyle(@middle);
+											text-align: center;
+											color:@white;
+											background-color: @no-of-chats;
+											border-radius: 10px;
+											width:15px;
+											height: 15px;
+										}
+									}
+									&:hover{
+										background-color: @user-hover;
+									}	
+								}
+							}
+						}
+					}
+				}
+				.usr-order-block{
+					float:left;
+					margin-left: 10px;
+					width:75%;
+					border:1px solid @screenborder;
+					border-radius:5px;
+
+					.userchat-name-address{
+						background-color: @white;
+						border-top-left-radius: 5px;
+						border-top-right-radius: 5px;
+						height: 54px;
+						padding:5px 20px;
+						margin-bottom: 2px;
+						.usr-chat-name{
+							.font(14px,'Roboto',@black,300);
+						}
+						.user-chat-address{
+							.font(14px,'Roboto',@search-input,300);
+						}
+					}
+					.user-chat-order-block{
+						overflow: hidden;
+						.userscreen-chat-box{
+							width:59%;
+							float:left;
+							margin-right: 7px;
+							.user-chat-screen-block{
+								background-color: @white;
+								overflow:auto;
+								height: 600px;
+								// height: 610px;
+								padding-top: 15px;
+								.user-order-msg{
+									margin: 15px;
+									// clear:both;
+									p{
+										// float:left;
+										display:inline-block;
+										margin-bottom: 0px;
+										text-align: justify;
+										// margin:15px;
+										width: 50%;//257px;
+										// height: 77px;
+										.font(12px,'Roboto',@search-input,300);
+										border-radius:5px;
+										padding:10px 20px;
+										background-color:@user-order-msg;
+										color:@user-order-text;
+										// margin:18px;
+									}
+								}
+								.user-response-msg{
+									margin: 15px;
+									text-align: right;
+									// clear:both;
+									p{
+										// float:right;
+										text-align: left;
+										display:inline-block;
+										margin-bottom: 0px;
+										// margin-right:30px;
+										// margin:15px;
+										width: 50%;//210px;
+										// height:36px;
+										border-radius: 5px;
+										padding:10px 20px;
+										background-color:@user-response-msg;
+										.font(12px,'Roboto',@white,300);	
+									}						
+								}
+								// .user-response-msg2{
+								// 	float:right;
+								// 	text-align: justify;
+								// 	margin-right:30px;
+								// 	margin-top:15px;
+								// 	width: 342px;
+								// 	height:56px;
+								// 	border-radius: 5px;
+								// 	padding:10px 20px;
+								// 	background-color:@user-response-msg;
+								// 	.font(12px,'Roboto',@white,300);							
+								// }
+								.user-response-confirm{
+									text-align: center;
+									margin:15px;
+									// clear:both;
+									
+									p{
+										// float:right;
+										width: 50%;
+										margin-bottom: 0px;
+										display:inline-block;
+										text-align:left;
+										// margin-right:160px;
+										// margin-top:15px;
+										// width: 50%;//205px;
+										// height:36px;s
+										border-radius: 5px;
+										padding:10px 20px;
+										background-color:@user-response-confirm;
+										.font(12px,'Roboto',@user-order-text,300);		
+									}					
+								}
+								.user-order-msg2{
+									float:left;
+									margin:20px;
+									text-align: justify;
+									width: 257px;
+									height: 57px;
+									.font(12px,'Roboto',@search-input,300);
+									border-radius:5px;
+									padding:10px 20px;
+									background-color:@user-order-msg;
+									color:@user-order-text;
+									
+								}
+								.user-response-confirm-msg2{
+									float:right;
+									text-align: justify;
+									margin-right:30px;
+									width: 342px;
+									height:56px;
+									border-radius: 5px;
+									padding:10px 20px;
+									background-color:@user-response-msg;
+									.font(12px,'Roboto',@white,300);		
+								}
+							}
+							.user-chat-input-box{
+								text-align: left;
+								padding: 10px;
+								background-color:@bodybg;
+								border-top:1px solid @screenborder;
+								border-right:none;
+								.msg-icon{
+									float:left;
+									background-color: @msg-icon;
+									width:35px;
+									height:35px;
+									border-radius: 20px;
+									text-align: center;
+									.centric{
+										.inlinestyle(@middle);
+										margin-top: 15px;
+										width: 5px;
+										height: 5px;
+										border-radius: 5px;
+										background-color: @centric;
+									}
+								}
+								.msg-box{
+									float:right;
+									width:90%;
+									background: url('../images/msg-arrow-icon.png') no-repeat;
+								  	height: 45px;
+								 	background-position: 98%;
+								  	background-color: @white;
+								  	border-radius: 5px;
+									.user-msg-input{
+										width: 90%;
+										text-indent: 10px;
+										background-color: @white;
+										.font(14px,'Roboto',@search-input,300);
+										height:45px;
+										outline: none;
+										appearance: none;
+										-webkit-appearance: none; 
+										-moz-appearance:none;
+										-o-appearance:none;
+										-ms-appearance:none;
+										border:none;
+										background-color: @white;
+									}			
+								}
+							}
+						}	
+							
+						.user-order-block{
+							float:left;
+							margin-left: 2px;
+							background-color: @white;
+							width:40%;
+							height:666px;
+							overflow:hidden;
+							border-bottom-right-radius: 5px;
+							.order-block{
+								overflow:hidden;
+								.order-label{
+									float:left;
+									padding: 15px;
+									.font(18px,'Roboto',@user-msg,400);
+								}
+								.top-arrow{
+									float:right;
+									margin:20px;
+									border-right:1px solid @arrow-down;
+								    border-bottom:1px solid @arrow-down;
+								    width:10px;
+								    height:10px;
+								    transform: rotate(-135deg);
+
+								}
+							}
+							.order-details-block
+							{
+								position: relative;
+								.order-options{
+									overflow:hidden;
+									padding:10px 20px;
+									.grocery{
+										float:left;
+
+										select{
+											.inlinestyle(@middle);
+											appearance:none;
+											-webkit-appearance:none;
+											-moz-appearance:none;
+											-ms-appearance:none;
+											-o-appearance:none;
+											width:100px;
+											border-radius:none;
+											border:none;
+											background-color:transparent;
+											border-bottom:1px solid @bodybg;
+											.font(12px,'Roboto',@grocery,500);
+											padding:5px;
+											outline:none;
+											background:url('../images/grocery-down.png')no-repeat;
+											background-position: right;
+										}
+									}
+									.spencers{
+										float:right;
+										select{
+											.inlinestyle(@middle);
+											appearance:none;
+											-webkit-appearance:none;
+											-moz-appearance:none;
+											-ms-appearance:none;
+											-o-appearance:none;
+											width:100px;
+											border-radius:none;
+											border:none;
+											background-color:transparent;
+											border-bottom:1px solid @bodybg;
+											.font(12px,'Roboto',@grocery,500);
+											padding:5px;
+											outline:none;
+											background:url('../images/grocery-down.png')no-repeat;
+											background-position: right;
+										}
+									}
+									
+								}
+									
+								.search-options{
+										position: absolute;
+										  top: 90px;
+										  left: 0px;
+										  right: 0px;
+										  background-color: white;
+										  height:100px;
+										  overflow:auto;
+									}
+								.order-search{
+									background-color: @search-field !important;
+									.font(16px,'Roboto',@search-input,400);
+									text-align: left;
+									background: url('../images/search-icon.png')no-repeat;
+									height: 44px;
+									width: 100%;//408px;//330px;
+									border:none;
+									text-indent: 50px;
+									background-position:20px 15px;
+									outline:none;
+								}
+								.product-info-scroll{
+									overflow:auto;
+									height: 220px;
+									.product-info-block{
+										padding: 10px;
+										text-align: left;
+										.font(12px,'Roboto',@product,400);
+										.product-close{
+											.inlinestyle(@middle);
+											margin: 8px 13px 0px 13px;
+											width: 20px;
+											height: 20px;
+											background: url('../images/close.png')no-repeat;
+										}
+										.product-name{
+											.inlinestyle(@middle);
+											padding: 5px;
+											width: 40%;
+
+										}
+										.quantity{
+											.inlinestyle(@middle);
+											padding: 5px;
+											width: 15%;
+										}
+										.quantity-block{
+											.inlinestyle(@middle);
+											padding: 5px;
+											text-align: center;
+											
+											.increment{
+												padding: 5px;
+												
+											}
+											.qty-val{
+												width: 25px;
+												text-align: center;
+
+											}
+											.decrement{
+												padding: 5px;
+
+											}
+
+										}
+										.price{
+											.inlinestyle(@middle);
+											width:37px;//15%;
+											padding: 5px;
+										}
+										.total-cost{
+											.inlinestyle(@middle);
+											padding: 5px;
+										}
+										
+									}
+
+								}
+									
+								.product-cost{
+									.cost-calculation{
+										width:100%;
+										overflow:auto;
+										background-color: @search-field;
+										.font(12px,'Roboto',@grocery,400);
+										.particulars{
+											.particular-name{
+												padding:5px;
+												text-align: right;
+											}
+											.space{
+												width:20px;
+											}
+											.particular-price{
+												text-align: center;
+											}
+										}		
+									}
+									.total-cost{
+										width:100%;
+										padding:10px 0px;
+										background-color: @search-field;
+										text-align: center;
+										.total-label{
+											.font(12px,'Roboto',@black,400);
+											.inlinestyle(@middle);
+											padding:10px;
+											.top-arrow{
+												.inlinestyle(@middle);
+												border-right:10px solid transparent;
+												border-left:10px solid transparent;
+												border-top:10px solid transparent;
+											    border-bottom:10px solid @grocery-arrow;
+											    width:15px;
+											    height:15px;
+											    margin-top: -8px;
+											    margin-right:10px;
+											}
+
+										}
+										.value{
+											padding:10px;
+											margin:0px 15px;
+											.font(12px,'Roboto',@black,400);
+											.inlinestyle(@middle);
+
+										}
+										.trans{
+											.send-tick{
+												.inlinestyle(@middle);
+												background: url('../images/send-tick.png')no-repeat;
+												height:10px;
+												width: 10px;
+												padding: 5px;
+												margin-right:10px;	
+											}
+											padding:10px 25px;
+											background-color: @user-response-msg;
+											.font(12px,'Roboto',@white,400);
+											.inlinestyle(@middle);
+											border-radius:5px;
+
+										}
+									}
+									
+								}
+							}//block
+							.order-history{
+								overflow:hidden;
+								padding: 20px;	
+								.history-name{
+									float:left;
+									.font(18px,'Roboto',@user-msg,400);
+								}
+								.history-downarrow{
+									float:right;
+									border-right:2px solid @arrow-down;
+								    border-bottom:2px solid @arrow-down;
+								    width:15px;
+								    height:15px;
+								    transform: rotate(45deg);
+
+								}
+							}
+							.message-template{
+								.font(18px,'Roboto',@user-msg,400);
+								padding:21px;
+								width: 100%;
+								height:260px;
+								overflow:auto;
+								.msg-temp{
+									margin-bottom: 8px;
+								}
+								.msg1{
+									overflow:hidden;
+									border-bottom:1px solid @bodybg;
+									padding:5px;
+									.msg{
+										width: 235px;
+										float:left;
+										text-align: justify;
+										.font(12px,'Roboto',@msg,400);
+										
+									}
+									.msg-arrow{
+										float:right;
+										background: url('../images/msg-arrow.png')no-repeat;
+										height:20px;
+										width:20px;
+									}
+									.arrow-pos{margin-top:20px;}
+								}
+								.end{
+									margin-top:20px;
+									border:none;
+								}
+							}
+								
+						}
+					}
+					
+				}
+			}
+		}
+	}
+	.footer-section{
+		background-color: @grocery;
+		height:75px;
+
+	}	
+}
+@import 'login.less';

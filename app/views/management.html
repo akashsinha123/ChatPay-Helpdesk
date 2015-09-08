@@ -1,0 +1,28 @@
+<div class="main-container">
+	<div class="content-section">
+		<div class="wrapper">
+			<div class="header">
+				<div class="logo" ng-click="home()"></div>
+				<div class="user-info" ng-mouseenter="adminInfo()" ng-mouseleave="adminInfo()">
+					<div class="design"></div>
+					<div class="user-msg">Hi Admin</div>
+					<div class="arrow-down"></div>
+					<div>
+						<ul ng-show="showInfo">
+							<li ng-click="managementPage()">Management</li>
+						    <li ng-click="logOut()">Log Out</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="main-usr-block">
+				
+				<management-list ></management-list>
+
+				<management-merchant ></management-merchant>
+				
+			</div>
+			</div>
+	</div>
+	<div class="footer-section"></div>
+</div>
